@@ -10,8 +10,7 @@
   <meta property="og:title" content="The Future of Content Tools like AxelBase">
   <meta property="og:description" content="Exploring emerging trends in web content tools and AxelBase's role.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://your-domain.com/blog/post7">
-  <meta property="og:image" content="https://your-domain.com/static/blog-post7-image.jpg">
+  <meta property="og:url" content="https://axelbase.github.io/markdown-converterpost7">
 </svelte:head>
 
 <section class="section">

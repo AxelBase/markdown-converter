@@ -10,8 +10,7 @@
   <meta property="og:title" content="Tips for Efficient Markdown to HTML Conversion">
   <meta property="og:description" content="Enhance your conversion process with these expert tips using AxelBase.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://your-domain.com/blog/post5">
-  <meta property="og:image" content="https://your-domain.com/static/blog-post5-image.jpg">
+  <meta property="og:url" content="https://axelbase.github.io/markdown-converter/blog/posts/post5">
 </svelte:head>
 
 <section class="section">

@@ -10,8 +10,7 @@
   <meta property="og:title" content="Common Mistakes in Markdown and How to Fix Them">
   <meta property="og:description" content="Avoid pitfalls in Markdown conversion with these tips from AxelBase.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://your-domain.com/blog/post6">
-  <meta property="og:image" content="https://your-domain.com/static/blog-post6-image.jpg">
+  <meta property="og:url" content="https://axelbase.github.io/markdown-converter/blog/posts/post6">
 </svelte:head>
 
 <section class="section">

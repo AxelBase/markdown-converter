@@ -10,8 +10,7 @@
   <meta property="og:title" content="Advanced Markdown Features for Power Users">
   <meta property="og:description" content="Master advanced Markdown techniques with AxelBase's conversion tool.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://your-domain.com/blog/post3">
-  <meta property="og:image" content="https://your-domain.com/static/blog-post3-image.jpg">
+  <meta property="og:url" content="https://axelbase.github.io/markdown-converter/blog/posts/post3">
 </svelte:head>
 
 <section class="section">

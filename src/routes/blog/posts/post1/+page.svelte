@@ -10,8 +10,7 @@
   <meta property="og:title" content="Introduction to Markdown Basics">
   <meta property="og:description" content="Learn the fundamentals of Markdown and how to convert it to HTML using AxelBase.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://your-domain.com/blog/post1">
-  <meta property="og:image" content="https://your-domain.com/static/blog-post1-image.jpg">
+  <meta property="og:url" content="https://axelbase.github.io/markdown-converter/blog/posts/post1">
 </svelte:head>
 
 <section class="section">

@@ -10,8 +10,7 @@
   <meta property="og:title" content="Use Cases for Developers with AxelBase">
   <meta property="og:description" content="How developers can utilize AxelBase in their daily workflows.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://your-domain.com/blog/post4">
-  <meta property="og:image" content="https://your-domain.com/static/blog-post4-image.jpg">
+  <meta property="og:url" content="https://axelbase.github.io/markdown-converter/blog/posts/post4">
 </svelte:head>
 
 <section class="section">
