@@ -1,72 +1,112 @@
-<!-- src/routes/blog/+page.svelte -->
-<!-- Blog index page: Displays 7 anchor posts with previews and links to individual landing pages. -->
-<!-- Uses dark green theme from app.css. -->
+<script lang="ts">
+  import { base } from '$app/paths';
 
-<script>
-  import { base } from '$app/paths'; // For linking to post pages.
+  const posts = [
+    { href: '/blog/posts/post1', title: 'Introducing AxelBase: A Privacy-Focused Markdown to HTML Converter', description: 'Discover this fully client-side web tool that converts Markdown to clean HTML without sending any data to servers, perfect for developers, writers, and educators.' },
+    { href: '/blog/posts/post2', title: 'Real-Time Preview: How Instant Rendering Works', description: 'Explore the mechanics of live Markdown conversion as you type, including debouncing techniques and efficient updates to the HTML preview pane.' },
+    { href: '/blog/posts/post3', title: 'Supported Markdown Syntax and CommonMark Compliance', description: 'A detailed look at handled elements like headings, lists, bold/italic text, links, images, code blocks, and blockquotes in this converter.' },
+    { href: '/blog/posts/post4', title: 'Secure HTML Output with Sanitization', description: 'Learn how DOMPurify prevents XSS risks by cleaning potentially malicious content while preserving valid Markdown-generated HTML.' },
+    { href: '/blog/posts/post5', title: 'Exporting HTML: From Preview to Standalone File', description: 'Step-by-step on generating complete HTML documents with embedded styles, ready for download and direct use in web projects.' },
+    { href: '/blog/posts/post6', title: 'Copy to Clipboard: Quick Integration Workflow', description: 'How the raw or styled HTML is copied seamlessly for pasting into blogs, documentation, or content management systems.' },
+    { href: '/blog/posts/post7', title: 'Uploading and Converting Existing .md Files', description: 'Guide to importing local Markdown files (up to 1MB) and automatically loading them for instant conversion and preview.' },
+    { href: '/blog/posts/post8', title: 'Input Limits and Performance Optimizations', description: 'Understanding the 10,000-character cap, real-time update throttling, and why it ensures smooth operation even on mobile devices.' },
+    { href: '/blog/posts/post9', title: 'Responsive Design and Cross-Device Experience', description: 'How Bootstrap-powered layout adapts the split-view interface for desktops, tablets, and phones with consistent usability.' },
+    { href: '/blog/posts/post10', title: 'Best Practices for Markdown to HTML Workflows', description: 'Tips on using this converter effectively for documentation, static site generation, blogging, and maintaining clean web-ready content.' },
+  ];
 </script>
 
-<section class="section">
-  <h1>AxelBase Blog</h1>
-  <p>Welcome to the AxelBase Blog, where we explore topics related to Markdown, HTML conversion, content creation, and web development tools. Browse our latest posts below.</p>
-</section>
+<svelte:head>
+  <title>Blog | AxelBase Insights</title>
+  <meta name="description" content="In-depth articles, guides, and technical explanations about using AxelBase, the client-side Markdown to HTML converter." />
+</svelte:head>
 
-<section class="section">
-  <h2>Featured Posts</h2>
-  <ul>
-    <li>
-      <a href="{base}/blog/posts/post1">Introduction to Markdown Basics</a>
-      <p>A beginner's guide to understanding Markdown syntax and its applications in content creation.</p>
-    </li>
-    <li>
-      <a href="{base}/blog/posts/post2">The Benefits of Converting Markdown to HTML</a>
-      <p>Explore how automated conversion tools like AxelBase can streamline your workflow and enhance productivity.</p>
-    </li>
-    <li>
-      <a href="{base}/blog/posts/post3">Advanced Markdown Features for Power Users</a>
-      <p>Dive into complex Markdown elements and how they translate to rich HTML output.</p>
-    </li>
-    <li>
-      <a href="{base}/blog/posts/post4">Use Cases for Developers with AxelBase</a>
-      <p>Real-world examples of how developers can leverage AxelBase in their projects.</p>
-    </li>
-    <li>
-      <a href="{base}/blog/posts/post5">Tips for Efficient Markdown to HTML Conversion</a>
-      <p>Best practices to optimize your conversion process and avoid common pitfalls.</p>
-    </li>
-    <li>
-      <a href="{base}/blog/posts/post6">Common Mistakes in Markdown and How to Fix Them</a>
-      <p>Identify frequent errors in Markdown usage and learn how to correct them for flawless HTML.</p>
-    </li>
-    <li>
-      <a href="{base}/blog/posts/post7">The Future of Content Tools like AxelBase</a>
-      <p>Insights into emerging trends in web content tools and what’s next for Markdown converters.</p>
-    </li>
-  </ul>
-</section>
+<div class="container fade-in blog-index">
+  <header class="blog-header">
+    <h1><i class="bi bi-journal-richtext"></i> Blog: AxelBase Insights</h1>
+    <p class="subtitle">
+      Practical guides, technical deep dives, and tips for getting the most out of this privacy-first, browser-based Markdown to HTML converter.
+      All processing happens locally—no data leaves your device.
+    </p>
+  </header>
+
+  <div class="posts-grid">
+    {#each posts as post}
+      <a href="{base}{post.href}" class="card post-card">
+        <div class="card-body">
+          <h2 class="post-title">{post.title}</h2>
+          <p class="post-description">{post.description}</p>
+          <span class="read-more">Read Article &rarr;</span>
+        </div>
+      </a>
+    {/each}
+  </div>
+</div>
 
 <style>
-  ul {
-    list-style-type: none;
-    padding: 0;
+  .blog-index {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
   }
-  li {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+
+  .blog-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2rem;
   }
-  li:hover {
-    transform: translateY(-5px);
+
+  .blog-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
   }
-  a {
-    font-weight: bold;
-    color: var(--dark-green);
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .post-card {
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  a:hover {
-    color: var(--light-green);
+
+  .post-card .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .post-title {
+    font-size: 1.25rem;
+    color: var(--accent-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .post-description {
+    color: var(--text-secondary);
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
+
+  .read-more {
+    color: var(--accent-primary);
+    font-weight: 600;
+    align-self: flex-start;
+    transition: var(--transition-fast);
+  }
+
+  .post-card:hover .read-more {
+    transform: translateX(5px);
   }
 </style>
